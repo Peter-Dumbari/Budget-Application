@@ -1,2 +1,23 @@
-<h1>Splash#index</h1>
-<p>Find me in app/views/splash/index.html.erb</p>
+<div class="container-fluid">
+    <div class="jumbotron text-center pt-3">
+      <div class="container mt-5 text-center d-flex align-center justify-content-center">
+        <img src="https://res.cloudinary.com/tamstech-computer-repair-center/image/upload/v1646303372/samples/cloudinary-icon.png" class="img-thumbnail img-fluid p-2" alt="...">
+      </div>
+
+      <div class="container mt-4 bg-warning.bg-gradient text-center">
+        <h5 class=" text-warning ">
+        Use our free
+          </h5>
+        <h3 class="text-primary fw-lighter text-uppercase">Budget Application</h3>
+        <div class="container w-50 mt-5 d-flex justify-content-space-between P-5">
+        <div class="col-6">
+            <%= link_to 'Login', new_user_session_path, class: 'btn btn-primary w-75' %>
+        </div>
+        <div class="col-6">
+         <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-warning w-75' %>
+        </div>
+        </div>
+      </div>
+      
+    </div>
+</div>
