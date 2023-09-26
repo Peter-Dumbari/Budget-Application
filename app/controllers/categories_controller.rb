@@ -1,8 +1,9 @@
 class CategoriesController < ApplicationController
+    before_action :authenticate_user! # Ensure the user is authenticated
 
     def index
-        @categories = Category.all # Assuming you have a Category model
-    end
+        @categories = current_user.categories # Fetch categories associated with the current user
+      end
 
     def new
         @category = Category.new
@@ -17,6 +18,18 @@ class CategoriesController < ApplicationController
           render :new
         end
     end
+
+    def destroy
+        @category = Category.find(params[:id])
+        @category.destroy
+        redirect_to categories_url, notice: 'Category item was successfully destroyed.'
+    end
+      
+    def show
+        @category = Category.find(params[:id])
+    end
+      
+    
     
     private 
 
