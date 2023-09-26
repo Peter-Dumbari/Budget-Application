@@ -1,0 +1,23 @@
+<div class="container mb-2 p-3 bg-light">
+    <div class="row">
+        <div class="img_container col-2">
+            <img scr= <%= category.icon %>/>
+        </div>
+        <div class="text_container col-10">
+                <div class="d-flex justify-content-between">
+                    <h5 class="mb-4">
+                        <%= category.name %>
+                    </h5>
+
+                    <div class="amount_container">
+                        <h5>0</h5>
+                    </div>
+                </div>
+                <hr/>
+            <span class="text-mute opacity-25">
+            <%= category.created_at.strftime("%Y-%m-%d")%>
+            </h6>
+            </span>
+        </div>
+    </div>
+</div>
