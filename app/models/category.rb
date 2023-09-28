@@ -7,7 +7,6 @@ class Category < ApplicationRecord
     transaction_records.sum(:amount)
   end
 
-
   validates :name, presence: true, length: { maximum: 255 }
   validates :icon_id, presence: true
 end
