@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
     before_action :authenticate_user! # Ensure the user is authenticated
 
+
     def index
         @categories = current_user.categories # Fetch categories associated with the current user
       end

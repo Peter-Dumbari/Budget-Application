@@ -15,7 +15,7 @@ class TransactionRecordsController < ApplicationController
         @transaction_record.user = current_user # Assign the authenticated user
 
         if @transaction_record.save
-            redirect_to category_path(@category), notice: 'Transaction Record was successfully created.'
+            redirect_to category_path(@category), notice: 'Transaction Record was successfully created'
         else
             render :new, status: 422
         end
