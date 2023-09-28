@@ -1,0 +1,20 @@
+<div  >
+    <div class="d-flex justify-content-between shadow-sm bg-white p-3 mb-3">
+        <div class="name_container">
+            <h6 class="fw-bold text-info"><%=transaction.name%></h6>
+            <div class="date_container mt-3">
+                <span class="text-mute  opacity-25">
+                    <%=transaction.created_at.strftime("%Y-%m-%d")%>
+                </span>
+            </div>
+        </div>
+
+        <div class="amount_container text-center">
+            <h6 class="fw-bold">$<%=transaction.amount%></h6>
+
+            <div class="delete_container mt-3">
+            <%= button_to "Delete", category_transaction_record_path(@category, transaction), method: :delete, data: { confirm: 'Are you sure?' } %>        
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,35 @@
+
+<div class="container shadow-sm bg-white p-3 mb-3">
+  <div class="row">
+    <div class="img_container col-2">
+      <% if category.icons.icon_url.present? %>
+      <img src="<%= category.icons&.icon_url %>" alt="category image" />      
+      <% else %>
+        <img src="https://res.cloudinary.com/tamstech-computer-repair-center/image/upload/v1695851081/icons/icons8-placeholder-64_cnb9ah.png" alt="Category Icon" />
+      <% end %>
+    </div>
+    <div class="text_container col-10">
+      <div class="d-flex justify-content-between">
+        <a href="<%= category_path(category) %>" id="<%= category.id %>" class="text-decoration-none">
+          <h5 class="mb-4 text-info">
+            <%= category.name %>
+          </h5>
+        </a>
+
+        <div class="amount_container">
+          <h5>$<%= category.total_amount %></h5>
+        </div>
+      </div>
+      <hr />
+      <div class="d-flex justify-content-between">
+        <span class="text-muted opacity-25">
+          <%= category.created_at.strftime("%Y-%m-%d") %>
+        </span>
+
+        <div class="delete_container">
+          <%= button_to "Delete", category_path(category), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -10,9 +10,19 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+  <body class="position-relative">
+    <%= render "shared/navbar" %>
+       
       <%= yield %>
+      <div class="position-absolute top-0 end-50">
+      <% if notice.present? %>
+      <p class="alert alert-success" role="alert"><%= notice %></p>
+      <% end %>
+    
+      <% if alert.present? %>
+        <p class="alert alert-warning" role="alert"><%= alert %></p>
+      <% end %>
+      </div
+      <script src="https://kit.fontawesome.com/2347fe76cf.js" crossorigin="anonymous"></script>
   </body>
 </html>
