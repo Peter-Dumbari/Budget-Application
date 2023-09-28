@@ -10,34 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_25_140624) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_28_054112) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.string "icon"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "icon_id"
+    t.index ["icon_id"], name: "index_categories_on_icon_id"
     t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
   create_table "icons", force: :cascade do |t|
     t.string "name"
-    t.string "url"
+    t.string "icon_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "s", force: :cascade do |t|
-    t.decimal "amount"
-    t.text "description"
-    t.string "category"
-    t.bigint "user_id", null: false
+  create_table "transaction_records", force: :cascade do |t|
+    t.decimal "amount", precision: 8, scale: 2, default: "0.0"
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.bigint "user_id", null: false
     t.index ["category_id"], name: "index_transaction_records_on_category_id"
     t.index ["user_id"], name: "index_transaction_records_on_user_id"
   end
@@ -55,6 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_25_140624) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "categories", "icons"
   add_foreign_key "categories", "users"
   add_foreign_key "transaction_records", "categories"
   add_foreign_key "transaction_records", "users"

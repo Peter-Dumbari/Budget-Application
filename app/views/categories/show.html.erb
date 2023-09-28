@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <div class="float-right">
+      <a href="<%= new_category_transaction_record_path(@category) %>" class="btn btn-primary text-decoration-none">Add Transaction</a>
+      </div>
+
+      <div class="mt-5 text">
+        <% @transactions.each do |transaction| %>
+          <%= render partial: 'shared/transaction_card', locals: { transaction: transaction } %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>

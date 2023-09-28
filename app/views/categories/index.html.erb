@@ -5,11 +5,12 @@
                 <a href=<%= new_category_path %> class="btn btn-primary text-decoration-none">Add Category</a>
             </div>
 
-            <div class="mt-5 text">
+            <div class="mt-5">
                     <% @categories.each do |category| %>
                         <%= render partial: 'shared/categories_card', locals: { category: category } %>
                     <% end %>
             </div>
+
         </div>
     </div> 
 </div>

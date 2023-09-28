@@ -21,19 +21,27 @@ class CategoriesController < ApplicationController
 
     def destroy
         @category = Category.find(params[:id])
-        @category.destroy
-        redirect_to categories_url, notice: 'Category item was successfully destroyed.'
+
+        if @category.transaction_records.empty?
+            @category.destroy
+            redirect_to categories_url, notice: 'Category item was successfully destroyed.'
+        else
+            redirect_to categories_url, alert: 'Category contains transactions and cannot be deleted.'
+        end
     end
       
     def show
         @category = Category.find(params[:id])
+        @transactions = @category.transaction_records # Assuming you have a relationship like has_many :transaction_records in your Category model
     end
+
+    
       
     
     
     private 
 
     def category_params
-        params.require(:category).permit(:name, :icon,  :user_id)
+        params.require(:category).permit(:name, :icon_id,  :user_id,)
     end
 end
