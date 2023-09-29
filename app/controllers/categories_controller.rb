@@ -24,7 +24,7 @@ class CategoriesController < ApplicationController
 
     if @category.transaction_records.empty?
       @category.destroy
-      redirect_to categories_url, notice: 'Category item was successfully destroyed.'
+      redirect_to categories_url, notice: 'Category item was successfully deleted.'
     else
       redirect_to categories_url, alert: 'Category contains transactions and cannot be deleted.'
     end
