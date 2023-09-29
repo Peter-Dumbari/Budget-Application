@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg bg-info p-3">
+  <div class="container-fluid">
+  <% if user_signed_in? %>
+    <%= link_to(root_path) do %>
+        <img class="w-50" src="https://res.cloudinary.com/tamstech-computer-repair-center/image/upload/v1695915595/icons/icons8-double-left-64_nf95fa.png" alt="nav-link"/>
+    <% end %>
+    <% end %>
+      <h6 class="fw-bold text-white">Budget Application</h6>
+</div>
+
+  </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+      </ul>
+      <% if user_signed_in? %>
+        <div class="logout_container">
+            <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+        </div>
+        <% end %>
+    </div>
+  </div>
+</nav>
