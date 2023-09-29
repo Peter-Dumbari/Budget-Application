@@ -13,10 +13,6 @@
 # # Category.create(name: 'Category 2', icon: 'icon2', user_id: 6)
 
 # # # Seed data for icons table
-Icon.create(name: 'House', url: 'https://res.cloudinary.com/tamstech-computer-repair-center/image/upload/v1695827356/icons/icons8-house-48_hxwkvp.png')
-Icon.create(name: 'Transport', url: 'https://res.cloudinary.com/tamstech-computer-repair-center/image/upload/v1695827357/icons/icons8-car-94_qyniid.png')
-Icon.create(name: 'Food', url: 'https://res.cloudinary.com/tamstech-computer-repair-center/image/upload/v1695827356/icons/icons8-kawaii-noodle-96_kboifr.png')
-
 # # Seed data for transaction_records table
 # TransactionRecord.create(amount: 100.0, description: 'Transaction 1', category: 'Category_1', user_id: 6, category_id: 15)
 # TransactionRecord.create(amount: 150.0, description: 'Transaction 2', category: 'Category_2', user_id: 6, category_id: 15)
