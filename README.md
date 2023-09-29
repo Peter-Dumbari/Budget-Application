@@ -59,7 +59,7 @@ Key features of the application.
 
 - [Live Demo Link](https://budget-application-wscs.onrender.com/)
 
-- [Project Walkthrough](https://www.loom.com/share/9cdfd5492bec4f75996b22d2bf5e15f0?sid=c272df87-5713-4f1a-bec6-54fd5a507d4b)
+- [Project Walkthrough](https://www.loom.com/share/1e6ccd455e3b498cacdad948d693e016?sid=5e2293c8-12df-4039-b207-730f22cd6172)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
