@@ -7,6 +7,10 @@ class Category < ApplicationRecord
     transaction_records.sum(:amount)
   end
 
+  def icon=(new_icon)
+    self.icon_id = new_icon.id
+  end
+
   validates :name, presence: true, length: { maximum: 255 }
   validates :icon_id, presence: true
 end
